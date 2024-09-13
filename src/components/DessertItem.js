@@ -5,7 +5,6 @@ function DessertItem({cover, category, name, price}) {
             <p>{category}</p>
             <h3>{name}</h3>
             <h4>${price}</h4>
-            <button>Ajouter au panier</button>
         </div>
     );
 }
