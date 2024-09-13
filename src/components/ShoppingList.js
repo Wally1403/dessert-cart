@@ -1,20 +1,22 @@
 import { dessertList } from "../data/data"
+import DessertItem from "./DessertItem"
 
 function ShoppingList() {
     return(
-        <ul>
-        {dessertList.map(({ image, name, category, price }) =>
-          (
-            <li>
-                <ul>
-                    <li>{name}</li>
-                    <li>{category}</li>
-                    <li>{price}</li>
-                </ul>
-            </li>
-          )
-        )}
-      </ul>
+      <div>
+          {dessertList.map(({ cover, id, name, category, price }) =>
+            (
+              <div key={id}>
+                      <DessertItem 
+                        cover= {cover}
+                        category= {category}
+                        name= {name}
+                        price= {price}
+                      />
+              </div>
+            )
+          )}
+      </div>
     )
 }
 
