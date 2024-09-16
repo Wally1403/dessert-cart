@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 function App() {
 
+
+
   const savedCart = localStorage.getItem('cart')
 
   const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : [])

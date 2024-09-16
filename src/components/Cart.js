@@ -1,6 +1,9 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import OrderConfirmed from "./OrderConfirmed";
 
 function Cart({cart, updateCart}) { 
+
+    const [orderIsConfirmed, setOrderConfirmed] = useState(false)
 
     const total = cart.reduce(
         (acc, dessert) => acc + dessert.amount * dessert.price,
@@ -41,7 +44,6 @@ function Cart({cart, updateCart}) {
 			return (<button onClick={() => removeCart(name, price)}>Supprimer</button>)
 		}
 	}
-
     return (
         <div>
             {cart.length > 0 ? (
@@ -64,11 +66,13 @@ function Cart({cart, updateCart}) {
                         <p>Order Total</p>
                         <h3>{total}€</h3>
                     </div>
-                    
+                    <button onClick={() => setOrderConfirmed(true)}>Confirm Order</button>
                 </div>
             ) : (
                 <div>Votre panier est vide</div>
             )}
+            {orderIsConfirmed ? 
+            <OrderConfirmed cart={cart} updateCart={updateCart} orderIsConfirmed={orderIsConfirmed}  setOrderConfirmed={setOrderConfirmed}/> : console.log('')}
         </div>
             
        
