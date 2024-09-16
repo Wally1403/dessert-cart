@@ -1,10 +1,16 @@
-import { useState } from "react"
+import { useEffect } from "react"
 
 function Cart({cart, updateCart}) { 
+
     const total = cart.reduce(
         (acc, dessert) => acc + dessert.amount * dessert.price,
         0
     ).toFixed(2)
+
+    useEffect(() => {
+        document.title = `Panier : ${total}$`;
+      }, [total]);
+      
 
     const itemNumber = cart.reduce(
         (acc, dessert) => acc + dessert.amount,
