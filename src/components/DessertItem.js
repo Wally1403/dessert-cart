@@ -1,6 +1,7 @@
 import logoCaddie from "../asset/images/icon-add-to-cart.svg"
 import incrementQuantity from "../asset/images/icon-increment-quantity.svg"
 import decrementQuantity from "../asset/images/icon-decrement-quantity.svg"
+import '../styles/dessertItem.css'
 
 function DessertItem({cart, updateCart, cover, category, name, price}){
 

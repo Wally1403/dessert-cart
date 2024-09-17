@@ -1,0 +1,33 @@
+@font-face {
+    font-family: RedHat;
+    src: url("../asset/fonts/RedHatText-VariableFont_wght.ttf");
+  }
+
+.dc-productList {
+    width: 800px;
+    height: 1185px;
+    opacity: 0px;
+}
+
+.dc-productList h1 {
+    margin: 0;
+    border: 2px solid black;
+    width: 176px;
+    height: 48px;
+    font-family: RedHat;
+    color: #260F08;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: left;
+}
+
+.dc-productList-list {
+    width: 800px;
+    height: 1105px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dc-productList-row {
+
+}

@@ -1,0 +1,5 @@
+body {
+    background: var(--color-rose-50, #FCF8F6);
+    margin: 0;
+    padding-top: 50px;
+}

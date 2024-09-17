@@ -1,14 +1,13 @@
 import { dessertList } from "../data/data"
 import DessertItem from "./DessertItem"
+import '../styles/shoppingList.css'
 
 function ShoppingList( {cart, updateCart} ) {
 
-  
-
   return(
-    <div>
+    <div className="dc-productList">
       <h1>Desserts</h1>
-      <div className="dc-productList">
+      <div className="dc-productList-list">
         {dessertList.map(({ cover, id, name, category, price }) =>
           (
             <div key={id} className="dc-productList-row">
@@ -24,6 +23,7 @@ function ShoppingList( {cart, updateCart} ) {
             </div>
           )
         )}
+        
       </div>
     </div>
   )
