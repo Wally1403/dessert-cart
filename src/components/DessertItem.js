@@ -1,3 +1,7 @@
+import logoCaddie from "../asset/images/icon-add-to-cart.svg"
+import incrementQuantity from "../asset/images/icon-increment-quantity.svg"
+import decrementQuantity from "../asset/images/icon-decrement-quantity.svg"
+
 function DessertItem({cart, updateCart, cover, category, name, price}){
 
     function addAmountToCart(name, price) {
@@ -38,16 +42,22 @@ function DessertItem({cart, updateCart, cover, category, name, price}){
         const currentDessertSaved = cart.find((dessert) => dessert.name === name)
 
         if(currentDessertSaved) {
-            return (<div>
-            <button onClick={() => removeToCart(name, price)}>-</button>
-            {currentDessertSaved.amount}
-            <button onClick={() => addAmountToCart(name, price)}>+</button>
-            </div>)
+            return (
+            <div>
+                <button className="dc-productList-item-button-addToCart" onClick={() => removeToCart(name, price)}>
+                    <img alt="logo-decrement-quantity" src={decrementQuantity}/>
+                </button>
+                <p>{currentDessertSaved.amount}</p>
+                <button className="dc-productList-item-button-addToCart" onClick={() => addAmountToCart(name, price)}>
+                    <img alt="logo-decrement-quantity" src={incrementQuantity}/>
+                </button>
+            </div>
+            )
             
         } else {
             return (
                 <button className="dc-productList-item-button-addToCart" onClick={() => addToCart(name, price)}>
-                    <img alt="logo-caddie" src="d"/>
+                    <img alt="logo-caddie" src={logoCaddie}/>
                     <p>Add to Cart</p>
                 </button>
             )
@@ -60,9 +70,12 @@ function DessertItem({cart, updateCart, cover, category, name, price}){
                 <img src={cover} alt="image du gâteau"/>
                 {buttonToAdd(name, price)}
             </div>
-            <p>{category}</p>
-            <h3>{name}</h3>
-            <h4>${price}</h4>
+            <div className="cd-productList-item-info">
+                <p>{category}</p>
+                <h3>{name}</h3>
+                <h4>${price}</h4>
+            </div>
+            
         </div>
     );
 }

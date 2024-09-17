@@ -1,4 +1,5 @@
 import { dessertList } from "../data/data"
+import logoCheck from "../asset/images/icon-order-confirmed.svg"
 
 function OrderConfirmed({cart, updateCart, setOrderConfirmed}) {
 
@@ -19,24 +20,46 @@ function OrderConfirmed({cart, updateCart, setOrderConfirmed}) {
     }
 
     return(
-        <div>
-            <img alt="bouton de validation"/>
-            <h1>Order Confirmed</h1>
-            <p>We hope you ennjoy your food</p>
-            {cart.map(({ name, price, amount }, index) => (
-                <div key={`${name}-${index}`}>
-                    <img alt="photo du gâteau" src={findCover(name)}/>
-                    <p>{name}</p>
-                    <p>{amount}x</p>
-                    <p>@{price.toFixed(2)}</p>
-                    <p>${(price*amount).toFixed(2)}</p>
+        <div className="dc-modal">
+
+            <div className="dc-modal-title-info">
+                <img alt="bouton de validation" src={logoCheck}/>
+                <div className="dc-modal-title-info-texts">
+                    <h1>Order Confirmed</h1>
+                    <p>We hope you enjoy your food</p>
                 </div>
-            ))}
-            <div>
-                <p>Order Total</p>
-                <h2>${total}</h2>
             </div>
-            <button onClick={() => orderIsFinished()}>Start New Order</button>
+
+            <div className="dc-modal-confirmedItem">
+                {cart.map(({ name, price, amount }, index) => (
+                    <div key={`${name}-${index}`} className="dc-modal-confirmedItem-items">
+                        <div className="dc-modal-confirmedItem-items-confirmItem">
+                            <div className="dc-modal-confirmedItem-items-confirmItem-item">
+                                <img alt="photo du gâteau" src={findCover(name)}/>
+
+                                <div className="dc-modal-confirmedItem-items-confirmItem-item-frame">
+                                    <p>{name}</p>
+                                    <div className="dc-modal-confirmedItem-items-confirmItem-item-frame-amount">
+                                        <p>{amount}x</p>
+                                        <p>@{price.toFixed(2)}</p>
+                                    </div> 
+                                </div>
+
+                            </div>
+                            <p>${(price*amount).toFixed(2)}</p>
+                        </div>
+                    </div>
+                ))}
+
+                <div className="dc-modal-confirmed-item-total">
+                    <p>Order Total</p>
+                    <h2>${total}</h2>
+                </div>
+
+            </div>
+
+            <button className="dc-modal-button" onClick={() => orderIsFinished()}>Start New Order</button>
+            
         </div>
     )
 }
