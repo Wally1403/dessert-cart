@@ -1,5 +1,117 @@
+@font-face {
+    font-family: RedHat;
+    src: url("../asset/fonts/RedHatText-VariableFont_wght.ttf");
+}
+
 .dc-productList-item {
     width: 250.67px;
     height: 347px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
+.dc-productList-item-image-and-button {
+    width: 250.67px;
+    height: 262px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dc-productList-item-image-and-button img{
+    width: 250.67px;
+    height: 240px;
+    border-radius: 8px;
+}
+.dc-productList-item-button-addToCart {
+    position: relative;
+    bottom: 22px;
+    border: 1px solid #AD8A85;
+    width: 160px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+}
+.dc-productList-item-button-addToCart img {
+    width: 20px;
+    height: 20px;
+}
+.dc-productList-item-button-addToCart p{
+    font-family: RedHat;
+    font-weight: 600;
+    line-height: 18.52px;
+    text-align: left;
+    margin: 0;
+}
+
+.dc-productList-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dc-productList-item-info p{
+    color: #87635A;
+    margin: 0;
+    font-family: RedHat;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18.52px;
+    text-align: left;
+}
+
+.dc-productList-item-info .item-name{
+    margin: 0;
+    color: #260F08;
+    font-family: RedHat;
+    font-weight: 600;
+    line-height: 21.17px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.dc-productList-item-info .item-price{
+    margin: 0;
+    font-family: RedHat;
+    font-weight: 600;
+    line-height: 21.17px;
+    font-size: 16px;
+    text-align: left;
+    color: #C73B0F;
+}
+
+.dc-productList-item-button-addToCart-quantity {
+    width: 160px;
+    max-width: 160px;
+    background-color:#C73B0F;
+    position: relative;
+    bottom: 22px;
+    border: 1px solid #AD8A85;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.dc-productList-item-button-addToCart-quantity p {
+    margin: 0;
+    color: white;
+    font-family: RedHat;
+    font-weight: 600;
+    line-height: 18.52px;
+    text-align: left;
+}
+.dc-productList-item-button-addToCart-quantity img {
+    margin: 0;
+    width: 10px;
+    height: 10px;
+    padding: 2.5px;
+    border: 1px solid white;
+}
+
+
+
+

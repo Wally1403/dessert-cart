@@ -1,12 +1,12 @@
-import waffle from "../asset/images/image-waffle-thumbnail.jpg"
-import cremeBrulee from "../asset/images/image-creme-brulee-thumbnail.jpg"
-import macaron from "../asset/images/image-macaron-thumbnail.jpg"
-import tiramisu from "../asset/images/image-tiramisu-thumbnail.jpg"
-import baklava from "../asset/images/image-baklava-thumbnail.jpg"
-import meringue from "../asset/images/image-meringue-thumbnail.jpg"
-import cake from "../asset/images/image-cake-thumbnail.jpg"
-import brownie from "../asset/images/image-brownie-thumbnail.jpg"
-import pannaCotta from "../asset/images/image-panna-cotta-thumbnail.jpg"
+import waffle from "../asset/images/image-waffle-desktop.jpg"
+import cremeBrulee from "../asset/images/image-creme-brulee-desktop.jpg"
+import macaron from "../asset/images/image-macaron-desktop.jpg"
+import tiramisu from "../asset/images/image-tiramisu-desktop.jpg"
+import baklava from "../asset/images/image-baklava-desktop.jpg"
+import meringue from "../asset/images/image-meringue-desktop.jpg"
+import cake from "../asset/images/image-cake-desktop.jpg"
+import brownie from "../asset/images/image-brownie-desktop.jpg"
+import pannaCotta from "../asset/images/image-panna-cotta-desktop.jpg"
 
 
 export const dessertList = [

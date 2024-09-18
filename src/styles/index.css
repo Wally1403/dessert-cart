@@ -1,5 +1,6 @@
 body {
-    background: var(--color-rose-50, #FCF8F6);
+    background-color :#FCF8F6;
     margin: 0;
-    padding-top: 50px;
+    padding: 88px 112px 112px 112px;
+    gap: 8px;
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import OrderConfirmed from "./OrderConfirmed";
 import logoNeutralTree from "../asset/images/icon-carbon-neutral.svg"
 import emptyIllustration from "../asset/images/illustration-empty-cart.svg"
+import "../styles/cart.css"
 
 function Cart({cart, updateCart}) { 
 

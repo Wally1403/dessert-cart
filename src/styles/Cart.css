@@ -1,0 +1,47 @@
+@font-face {
+    font-family: RedHat;
+    src: url("../asset/fonts/RedHatText-VariableFont_wght.ttf");
+}
+
+.dc-cart-empty {
+    margin: 0;
+    background-color: #FFFFFF;
+    width:  384px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.dc-cart-empty h2 {
+    margin: 0;
+    margin-bottom: 24px;
+    line-height: 31.75px;
+    width: 155px;
+    font-weight: 700;
+    font-family: RedHat;
+    color: #C73B0F;
+}
+
+.dc-cart-empty-placeholder {
+    margin: 0;
+    padding: 16px 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.dc-cart-empty-placeholder img {
+    width: 128px;
+    height: 128px;
+}
+.dc-cart-empty-placeholder p {
+    width: auto;
+    font-family: RedHat;
+    font-weight: 600;
+    line-height: 18.52px;
+    text-align: center;
+    color: #87635A;
+}
+

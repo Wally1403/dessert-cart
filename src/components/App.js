@@ -1,6 +1,7 @@
 import ShoppingList from "./ShoppingList";
 import Cart from "./Cart";
 import { useEffect, useState } from "react";
+import "../styles/app.css"
 
 function App() {
 
@@ -15,8 +16,8 @@ function App() {
 
   return (
     <div className="dc-main-content">
-      <ShoppingList cart={cart} updateCart={updateCart}/>
-      <Cart cart={cart} updateCart={updateCart}/>
+        <ShoppingList cart={cart} updateCart={updateCart}/>
+        <Cart cart={cart} updateCart={updateCart}/>
     </div>
   )
 }

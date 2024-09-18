@@ -10,7 +10,7 @@ function ShoppingList( {cart, updateCart} ) {
       <div className="dc-productList-list">
         {dessertList.map(({ cover, id, name, category, price }) =>
           (
-            <div key={id} className="dc-productList-row">
+            <div key={id}>
                     <DessertItem 
                       cart={cart}
                       updateCart = {updateCart}

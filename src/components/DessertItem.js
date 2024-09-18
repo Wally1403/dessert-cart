@@ -44,15 +44,11 @@ function DessertItem({cart, updateCart, cover, category, name, price}){
 
         if(currentDessertSaved) {
             return (
-            <div>
-                <button className="dc-productList-item-button-addToCart" onClick={() => removeToCart(name, price)}>
-                    <img alt="logo-decrement-quantity" src={decrementQuantity}/>
-                </button>
+            <button className="dc-productList-item-button-addToCart-quantity">
+                <img onClick={() => removeToCart(name, price)} alt="logo-decrement-quantity" src={decrementQuantity}/>
                 <p>{currentDessertSaved.amount}</p>
-                <button className="dc-productList-item-button-addToCart" onClick={() => addAmountToCart(name, price)}>
-                    <img alt="logo-decrement-quantity" src={incrementQuantity}/>
-                </button>
-            </div>
+                <img onClick={() => addAmountToCart(name, price)} alt="logo-decrement-quantity" src={incrementQuantity}/>
+            </button>
             )
             
         } else {
@@ -71,10 +67,10 @@ function DessertItem({cart, updateCart, cover, category, name, price}){
                 <img src={cover} alt="image du gâteau"/>
                 {buttonToAdd(name, price)}
             </div>
-            <div className="cd-productList-item-info">
+            <div className="dc-productList-item-info">
                 <p>{category}</p>
-                <h3>{name}</h3>
-                <h4>${price}</h4>
+                <h3 className="item-name">{name}</h3>
+                <h3 className="item-price">${price}</h3>
             </div>
             
         </div>
