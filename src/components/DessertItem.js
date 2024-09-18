@@ -75,7 +75,7 @@ function DessertItem({cart, updateCart, cover, category, name, price}){
     return (
         <div className="dc-productList-item">
             <div className="dc-productList-item-image-and-button">
-                <img className={isOnCart(name) ? "active" : ""} src={cover} alt="image du gâteau"/>
+                <img className={isOnCart(name) ? "active" : "non-active"} src={cover} alt="image du gâteau"/>
                 {buttonToAdd(name, price)}
             </div>
             <div className="dc-productList-item-info">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import OrderConfirmed from "./OrderConfirmed";
 import logoNeutralTree from "../asset/images/icon-carbon-neutral.svg"
 import emptyIllustration from "../asset/images/illustration-empty-cart.svg"
+import boutonCroix from "../asset/images/icon-remove-item.svg"
 import "../styles/cart.css"
 
 function Cart({cart, updateCart}) { 
@@ -44,25 +45,29 @@ function Cart({cart, updateCart}) {
     function isDeleting(name, price) {
 		const currentPlantSaved = cart.find((plant) => plant.name === name)
 		if (currentPlantSaved) {
-			return (<button className="dc-cart-added-item-button-remove" onClick={() => removeCart(name, price)}>Supprimer</button>)
+			return (
+                <button className="dc-cart-added-item-button-remove">
+                    <img onClick={() => removeCart(name, price)} src={boutonCroix} alt="croix"/>
+                </button>
+            )
 		}
 	}
     return (
         <div>
             {cart.length > 0 ? (
-                <div className="dc-cart-fill">
+                <div className="dc-cart">
 
-                    <h2>Your cart ({itemNumber})</h2>
+                    <h2>Your Cart ({itemNumber})</h2>
 
                     <ul className="dc-cart-added-items">
                         {cart.map(({ name, price, amount }, index) => (
                             <div key={`${name}-${index}`} className="dc-cart-added-item">
                                 <div className="dc-cart-added-item-info">
-                                    <p>{name}</p>
+                                    <h4>{name}</h4>
                                     <div className="quantity-and-price">
-                                      <p>{amount}x</p>
-                                      <p>@{price.toFixed(2)}</p>
-                                      <p>${(price*amount).toFixed(2)}</p>
+                                      <h4><span className="bold red">{amount}x</span></h4>
+                                      <h4>@{price.toFixed(2)}</h4>
+                                      <h4><span className="bold">${(price*amount).toFixed(2)}</span></h4>
                                     </div>
                                 </div>
                                 {isDeleting(name, price)}
@@ -72,23 +77,23 @@ function Cart({cart, updateCart}) {
 
                     <div className="dc-cart-orderTotal">
                         <p>Order Total</p>
-                        <h3>{total}€</h3>
+                        <h2>${total}</h2>
                     </div>
 
                     <div className="dc-cart-carbon-neutral">
                         <div className="dc-cart-carbon-neutral-info">
                             <img alt="logo-neutral-tree" src={logoNeutralTree}/>
-                            <p>This a neutral <b>carbon-neutral</b> delivery</p>
+                            <p>This a neutral <span className="bold">carbon-neutral</span> delivery</p>
                         </div>
                     </div>
 
                     <button className="dc-cart-button-confirm" onClick={() => setOrderConfirmed(true)}>
-                        <p>Confirm Order</p>
+                        <h3>Confirm Order</h3>
                     </button>
                 </div>
             ) : (
-                <div className="dc-cart-empty">
-                    <h2>Your Cart(0)</h2>
+                <div className="dc-cart">
+                    <h2>Your Cart (0)</h2>
 
                     <div className="dc-cart-empty-placeholder">
                         <img alt="empty-illustration" src={emptyIllustration}/>

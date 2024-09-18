@@ -17,13 +17,17 @@
     flex-direction: column;
     align-items: center;
 }
-.active {
-    border: 2px solid #C73B0F;
-}
+
 .dc-productList-item-image-and-button img{
     width: 250.67px;
     height: 240px;
     border-radius: 8px;
+}
+.active {
+    border: 2px solid #C73B0F;
+}
+.non-active {
+    border: 2px solid #FCF8F6;
 }
 .dc-productList-item-button-addToCart {
     position: relative;
