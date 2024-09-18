@@ -16,27 +16,38 @@ function DessertItem({cart, updateCart, cover, category, name, price}){
           ...cartFilteredCurrentDessert,
           {name, price, amount: currentDessertSaved.amount + 1}]
         )
-      } 
-      function addToCart(name, price) {
+    } 
+    function addToCart(name, price) {
           updateCart([...cart, {name, price, amount: 1}])
-      }
-      function removeToCart(name, price) {
-        const currentPlantSaved = cart.find((plant) => plant.name === name)
-            if (currentPlantSaved) {
-                const cartFilteredCurrentPlant = cart.filter(
-                    (plant) => plant.name !== name
+    }
+
+    function removeToCart(name, price) {
+        const currentDessertSaved = cart.find((plant) => plant.name === name)
+        if (currentDessertSaved) {
+            const cartFilteredCurrentDessert = cart.filter(
+                (plant) => plant.name !== name
+            )
+            if (currentDessertSaved.amount === 1) {
+                updateCart(
+                    cartFilteredCurrentDessert
                 )
-                if (currentPlantSaved.amount === 1) {
-                    updateCart(
-                        cartFilteredCurrentPlant
-                    )
-                } else {
-                    updateCart([
-                        ...cartFilteredCurrentPlant,
-                        { name, price, amount: currentPlantSaved.amount - 1 }
-                    ])
-                }
+            } else {
+                updateCart([
+                    ...cartFilteredCurrentDessert,
+                    { name, price, amount: currentDessertSaved.amount - 1 }
+                ])
             }
+        }
+    }
+
+    function isOnCart(name) {
+        const currentDessertSaved = cart.find((plant) => plant.name === name)
+        if (currentDessertSaved) {
+            return true
+        }
+        else {
+            return false
+        }
     }
     
     function buttonToAdd(name, price) {
@@ -64,7 +75,7 @@ function DessertItem({cart, updateCart, cover, category, name, price}){
     return (
         <div className="dc-productList-item">
             <div className="dc-productList-item-image-and-button">
-                <img src={cover} alt="image du gâteau"/>
+                <img className={isOnCart(name) ? "active" : ""} src={cover} alt="image du gâteau"/>
                 {buttonToAdd(name, price)}
             </div>
             <div className="dc-productList-item-info">
