@@ -8,13 +8,13 @@ function ShoppingList( {cart, updateCart} ) {
     <div className="dc-productList">
       <h1>Desserts</h1>
       <div className="dc-productList-list">
-        {dessertList.map(({ cover, id, name, category, price }) =>
+        {dessertList.map(({ image, id, name, category, price }) =>
           (
             <div key={id}>
                     <DessertItem 
                       cart={cart}
                       updateCart = {updateCart}
-                      cover= {cover}
+                      cover= {image["desktop"]}
                       category= {category}
                       name= {name}
                       price= {price}

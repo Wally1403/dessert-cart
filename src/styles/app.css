@@ -1,7 +1,10 @@
 .dc-main-content{
+    position: relative;
     width: 1216px;
     height: 1185px;
+    margin: 88px 112px 112px 112px;
     display: flex;
     justify-content: space-between;
     gap: 32px; 
 }
+

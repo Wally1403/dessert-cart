@@ -1,0 +1,13 @@
+.dc-modal {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 40px;
+    gap: 32px;
+    width: 592px;
+    border-radius: 12px;
+    background-color: white;
+    opacity: 1;
+}

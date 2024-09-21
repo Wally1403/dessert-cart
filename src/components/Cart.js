@@ -5,9 +5,7 @@ import emptyIllustration from "../asset/images/illustration-empty-cart.svg"
 import boutonCroix from "../asset/images/icon-remove-item.svg"
 import "../styles/cart.css"
 
-function Cart({cart, updateCart}) { 
-
-    const [orderIsConfirmed, setOrderConfirmed] = useState(false)
+function Cart({cart, updateCart, setOrderConfirmed}) { 
 
     const total = cart.reduce(
         (acc, dessert) => acc + dessert.amount * dessert.price,
@@ -59,21 +57,23 @@ function Cart({cart, updateCart}) {
 
                     <h2>Your Cart ({itemNumber})</h2>
 
-                    <ul className="dc-cart-added-items">
+                    <div className="dc-cart-added-items">
                         {cart.map(({ name, price, amount }, index) => (
                             <div key={`${name}-${index}`} className="dc-cart-added-item">
                                 <div className="dc-cart-added-item-info">
                                     <h4>{name}</h4>
                                     <div className="quantity-and-price">
-                                      <h4><span className="bold red">{amount}x</span></h4>
-                                      <h4>@{price.toFixed(2)}</h4>
-                                      <h4><span className="bold">${(price*amount).toFixed(2)}</span></h4>
+                                        <h4><span className="bold red">{amount}x</span></h4>
+                                        <h4>@ ${price.toFixed(2)}</h4>
+                                        <h4><span className="bold">${(price*amount).toFixed(2)}</span></h4>
                                     </div>
                                 </div>
                                 {isDeleting(name, price)}
                             </div>
                         ))}
-                    </ul>
+                    </div>
+
+                    <div className="separator"></div>
 
                     <div className="dc-cart-orderTotal">
                         <p>Order Total</p>
@@ -101,8 +101,7 @@ function Cart({cart, updateCart}) {
                     </div>
                 </div>
             )}
-            {orderIsConfirmed ? 
-            <OrderConfirmed cart={cart} updateCart={updateCart} orderIsConfirmed={orderIsConfirmed}  setOrderConfirmed={setOrderConfirmed}/> : console.log('')}
+            
         </div>
             
        

@@ -1,5 +1,6 @@
 import { dessertList } from "../data/data"
 import logoCheck from "../asset/images/icon-order-confirmed.svg"
+import '../styles/orderConfirmed.css'
 
 function OrderConfirmed({cart, updateCart, setOrderConfirmed}) {
 
@@ -10,8 +11,7 @@ function OrderConfirmed({cart, updateCart, setOrderConfirmed}) {
 
     function findCover(name) {
         const currentDessertCover = dessertList.find((dessert) => dessert.name === name)
-        console.log(name)
-        return currentDessertCover.cover
+        return (currentDessertCover.image['thumbnail'])
     }
 
     function orderIsFinished() {
