@@ -20,7 +20,7 @@ function OrderConfirmed({cart, updateCart, setOrderConfirmed}) {
     }
 
     return(
-        <div className="dc-modal">
+        <div className="dc-modal-content">
 
             <div className="dc-modal-title-info">
                 <img alt="bouton de validation" src={logoCheck}/>
@@ -33,32 +33,36 @@ function OrderConfirmed({cart, updateCart, setOrderConfirmed}) {
             <div className="dc-modal-confirmedItem">
                 {cart.map(({ name, price, amount }, index) => (
                     <div key={`${name}-${index}`} className="dc-modal-confirmedItem-items">
-                        <div className="dc-modal-confirmedItem-items-confirmItem">
-                            <div className="dc-modal-confirmedItem-items-confirmItem-item">
-                                <img alt="photo du gâteau" src={findCover(name)}/>
+                        <div className="dc-modal-confirmedItem-items-confirmItem-item">
+                            <img alt="photo du gâteau" src={findCover(name)}/>
 
-                                <div className="dc-modal-confirmedItem-items-confirmItem-item-frame">
-                                    <p>{name}</p>
-                                    <div className="dc-modal-confirmedItem-items-confirmItem-item-frame-amount">
-                                        <p>{amount}x</p>
-                                        <p>@{price.toFixed(2)}</p>
-                                    </div> 
-                                </div>
-
+                            <div className="dc-modal-confirmedItem-items-confirmItem-item-frame">
+                                <h4>{name}</h4>
+                                <div className="dc-modal-confirmedItem-items-confirmItem-item-frame-amount">
+                                    <h4>{amount}x</h4>
+                                    <h4>@{price.toFixed(2)}</h4>
+                                </div> 
                             </div>
-                            <p>${(price*amount).toFixed(2)}</p>
+
                         </div>
+                        <h3>${(price*amount).toFixed(2)}</h3>
+                      
                     </div>
+
                 ))}
+                
+  
 
                 <div className="dc-modal-confirmed-item-total">
-                    <p>Order Total</p>
+                    <h4>Order Total</h4>
                     <h2>${total}</h2>
                 </div>
 
             </div>
 
-            <button className="dc-modal-button" onClick={() => orderIsFinished()}>Start New Order</button>
+            <button className="dc-modal-button" onClick={() => orderIsFinished()}>
+                <h3>Start New Order</h3>
+            </button>
             
         </div>
     )

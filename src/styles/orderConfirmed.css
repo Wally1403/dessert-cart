@@ -1,13 +1,187 @@
+@font-face {
+    font-family: RedHat;
+    src: url("../asset/fonts/RedHatText-VariableFont_wght.ttf");
+}
+
 .dc-modal {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 5;
     display: flex;
     flex-direction: column;
-    height: auto;
-    padding: 40px;
-    gap: 32px;
+    padding: 0 40px 0 40px ;
+    gap: 8px;
+    width: 1440px;
+    height: 1361px;
+    background: #00000080;
+
+}
+
+.dc-modal-content {
     width: 592px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     border-radius: 12px;
     background-color: white;
-    opacity: 1;
+    margin: auto;
+}
+
+.dc-modal-title-info {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dc-modal-title-info img {
+    width: 40px;
+    height: 40px;
+}
+
+.dc-modal-title-info-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dc-modal-title-info-texts h1 {
+   color :#260F08;
+   line-height: 48px;
+   margin: 0;
+   font-family: RedHat;
+   font-weight: 700;
+   text-align: left;
+}
+
+.dc-modal-title-info-texts p {
+    font-family: RedHat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.17px;
+    text-align: left;
+    margin: 0;
+    color: #87635A;
+}
+
+.dc-modal-confirmedItem {
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #FCF8F6;
+}
+
+.dc-modal-confirmedItem-items {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #F5EEEC;
+}
+
+.dc-modal-confirmedItem-items:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.dc-modal-confirmedItem-items-confirmItem-item {
+    display: flex;
+    gap: 16px;
+}
+
+.dc-modal-confirmedItem-items-confirmItem-item img {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+}
+
+.dc-modal-confirmedItem-items-confirmItem-item-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dc-modal-confirmedItem-items-confirmItem-item-frame h4 {
+    font-family: RedHat;
+    font-weight: 600;
+    line-height: 18.52px;
+    text-align: left;
+    margin: 0;
+}
+
+.dc-modal-confirmedItem-items-confirmItem-item-frame-amount {
+    display: flex;
+    gap: 8px;
+}
+
+.dc-modal-confirmedItem-items-confirmItem-item-frame-amount h4 {
+    font-family: RedHat;
+    font-weight: 600;
+    line-height: 18.52px;
+    text-align: left;
+    margin: 0;
+    color: #C73B0F;
+}
+
+.dc-modal-confirmedItem-items-confirmItem-item-frame-amount h4:last-child {
+    color: #87635A;
+    font-weight: 400;
+}
+
+.dc-modal-confirmedItem-items h3 {
+    font-family: RedHat;
+    font-weight: 600;
+    line-height: 21.17px;
+    text-align: left;
+    font-size: 16px;
+    margin: auto 0;
+    color: #260F08;
+}
+
+.dc-modal-confirmed-item-total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dc-modal-confirmed-item-total h4 {
+    margin: auto 0;
+    font-family: RedHat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.52px;
+    text-align: left;
+    color: #260F08;
+}
+
+.dc-modal-confirmed-item-total h2 {
+    margin: 0;
+    font-weight: 700;
+    line-height: 31.75px;
+    text-align: left;
+    font-size: 24px;
+    font-family: RedHat;
+    color: #260F08;
+}
+
+.dc-modal-button {
+    display: flex;
+    gap: 8px;
+    border-radius: 999px;
+    padding: 16px 24px 16px 24px;
+    background-color: #C73B0F;
+    border: none;
+}
+
+.dc-modal-button h3 {
+    color: white;
+    margin: auto auto;
+    font-weight: 600;
+    line-height: 21.17px;
+    text-align: left;
+    font-family: RedHat;
+    font-size: 16px;
 }
